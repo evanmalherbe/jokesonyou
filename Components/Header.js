@@ -12,18 +12,20 @@ const logoStyle = {
 };
 
 const linkStyle = {
-  marginRight: "1rem",
+  marginRight: "2rem",
   marginLeft: "auto",
+  fontSize: "1.2rem",
+  fontWeight: "bold",
 };
 
 const Header = () => (
   <div className="logoAndHeading">
     <Image
-      src="/static/images/starwarsLogo.png"
-      alt="Star Wars"
+      src="/static/images/smiley.png"
+      alt="Smiley face logo"
       style={logoStyle}
     />
-    <h1>Star Wars Planets</h1>
+    <h1>The World is a Funny Place</h1>
     <Link href="/">
       <a style={linkStyle}>Home</a>
     </Link>
@@ -39,11 +41,13 @@ const Header = () => (
         align-items: center;
         padding: 0.5rem;
         border-bottom: 1px solid #dedede;
+        background-color: #f5f4f6;
       }
 
       h1 {
         display: inline;
         margin-left: 1rem;
+        color: #5e615e;
       }
     `}</style>
   </div>

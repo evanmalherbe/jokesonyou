@@ -4,35 +4,22 @@ import Image from "react-bootstrap/Image";
 
 // Styling for logo
 const imgStyle = {
-  width: 500,
+  width: "40rem",
+  border: "1px #97afa3 solid",
 };
 
 const Post = (props) => (
   <Layout>
-    <h1>Planet name: {props.planet.name}</h1>
     <div className="both">
       <div className="left">
-        <ul>
-          <li>
-            <b>Terrain:</b> {props.planet.terrain}
-          </li>
-          <li>
-            <b>Climate:</b> {props.planet.climate}
-          </li>
-          <li>
-            <b>Population: </b>
-            {props.planet.population}
-          </li>
-          <li>
-            <b>Diameter:</b> {props.planet.diameter}
-          </li>
-        </ul>
+        <div className="setup">{props.joke.setup}</div>
+        <div className="delivery">{props.joke.delivery}</div>
       </div>
       <div className="right">
         {" "}
         <Image
-          src="/static/images/planetImg.jpg"
-          alt="Star Wars planet"
+          src="/static/images/girl.jpg"
+          alt="Girl laughing"
           style={imgStyle}
         />
       </div>
@@ -42,12 +29,30 @@ const Post = (props) => (
       .both {
         display: flex;
         flex-direction: row;
+        padding-top: 1rem;
+        border-left: 1px solid #dedede;
+        border-right: 1px solid #dedede;
       }
       .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         flex: 1;
+
+        padding: 1rem;
+        margin-right: 0.5rem;
       }
       .right {
         flex: 1;
+      }
+      .setup {
+        font-size: 1.5rem;
+      }
+      .delivery {
+        font-weight: bold;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+        color: blue;
       }
     `}</style>
   </Layout>
@@ -60,12 +65,12 @@ It has a query field that we can use to fetch information.
 In our example, we picked the show ID from query params and fetched its show data from the TVMaze API. */
 Post.getInitialProps = async function (context) {
   const { id } = context.query;
-  const res = await fetch(`https://swapi.dev/api/planets/${id}`);
-  const planet = await res.json();
+  const res = await fetch(`https://v2.jokeapi.dev/joke/Any?idRange=${id}`);
+  const joke = await res.json();
 
-  console.log(`Fetched plant: ${planet.name}`);
+  //console.log(`Fetched planet: ${planet.name}`);
 
-  return { planet };
+  return { joke };
 };
 
 export default Post;
