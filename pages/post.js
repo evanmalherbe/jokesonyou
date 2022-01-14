@@ -1,17 +1,22 @@
+// Post page to display jokes and their punchlines
+
+// Import components
 import Layout from "../components/Layout.js";
 import fetch from "isomorphic-unfetch";
 import Image from "react-bootstrap/Image";
 
-// Styling for logo
+// Styling for image
 const imgStyle = {
   width: "40rem",
   border: "1px #97afa3 solid",
 };
 
+// function to display page
 const Post = (props) => (
   <Layout>
     <div className="both">
       <div className="left">
+        {/* Get joke and punchline from props */}
         <div className="setup">{props.joke.setup}</div>
         <div className="delivery">{props.joke.delivery}</div>
       </div>
@@ -24,7 +29,7 @@ const Post = (props) => (
         />
       </div>
     </div>
-    {/* Styling for page */}
+    {/* Styling for post page */}
     <style jsx>{`
       .both {
         display: flex;
@@ -38,7 +43,6 @@ const Post = (props) => (
         flex-direction: column;
         align-items: center;
         flex: 1;
-
         padding: 1rem;
         margin-right: 0.5rem;
       }
@@ -58,19 +62,16 @@ const Post = (props) => (
   </Layout>
 );
 
-/* Here we once again use getInitialProps. This time we retrieve
-data from the TVMaze API using the ID passed through from index.js.
-The first argument of the function is the context object.
-It has a query field that we can use to fetch information.
-In our example, we picked the show ID from query params and fetched its show data from the TVMaze API. */
+/* Fetch specific joke from jokes api using the id specified when user clicked link on home page */
 Post.getInitialProps = async function (context) {
+  // Get id of post passed through from server.js
   const { id } = context.query;
   const res = await fetch(`https://v2.jokeapi.dev/joke/Any?idRange=${id}`);
   const joke = await res.json();
 
-  //console.log(`Fetched planet: ${planet.name}`);
-
+  // Pass joke on to main function as props
   return { joke };
 };
 
+// Export post component to be used by other files
 export default Post;

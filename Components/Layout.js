@@ -1,5 +1,9 @@
+// Global layout for all pages
+
+// Import header component
 import Header from "./Header";
 
+// Styling for layout
 const layoutStyle = {
   margin: 0,
   padding: 0,
@@ -28,4 +32,5 @@ const Layout = (props) => (
   </div>
 );
 
+// Export layout to be used by other files
 export default Layout;

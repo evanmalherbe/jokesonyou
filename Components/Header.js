@@ -1,4 +1,7 @@
+// Header component for every page
+
 import Link from "next/link";
+
 // Import image from bootstrap
 import Image from "react-bootstrap/Image";
 
@@ -11,6 +14,7 @@ const logoStyle = {
   width: 100,
 };
 
+// Styling for links
 const linkStyle = {
   marginRight: "2rem",
   marginLeft: "auto",
@@ -53,4 +57,5 @@ const Header = () => (
   </div>
 );
 
+// Export header to be used by other files
 export default Header;

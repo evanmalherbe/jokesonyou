@@ -18,10 +18,12 @@ app
       app.render(req, res, actualPage, queryParams);
     });
 
+    // Deal with requests to any url
     server.get("*", (req, res) => {
       return handle(req, res);
     });
 
+    // Listen on port 3000
     server.listen(3000, (err) => {
       if (err) throw err;
       console.log("> Ready on http://localhost:3000");
