@@ -54,17 +54,17 @@ To run this project, do the following:
 
 1. Once you open the project in your browser [http://localhost:3000](http://localhost:3000), you will see a list of 5 jokes (these are the first part of a two part joke). See figure 1 below.
 
-![figure 1](static/images/screenshot1.png)
+![figure 1](public/static/images/screenshot1.png)
 Figure 1
 
 2. Click on any of the jokes to be taken to another page, where the punchline of the joke will be revealed. See figure 2 below.
 
-![figure 2](static/images/screenshot2.png)
+![figure 2](public/static/images/screenshot2.png)
 Figure 2
 
 3. Click the "Home" link at the top right corner of the page to return to the home page, where you can select a different joke. See figure 3 below.
 
-![figure 3](static/images/screenshot3.png)
+![figure 3](public/static/images/screenshot3.png)
 Figure 3
 
 ## Credits
