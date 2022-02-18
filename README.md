@@ -4,6 +4,8 @@
 
 This app uses Next.js to serve up a few jokes from a simple jokes api. It fetches new jokes each time it is loaded. When you click on a joke, it takes you to another page which reveals the punchline.
 
+This project has been deployed with [Vercel](https://vercel.com/) to: [https://jokesonyou-six.vercel.app/](https://jokesonyou-six.vercel.app/).
+
 ## Table of Contents
 
 - [Instructions](#instructions)
@@ -69,4 +71,4 @@ Figure 3
 
 ## Credits
 
-This project was created by Evan Malherbe as part of a task for HyperioDev Full Stack Development Bootcamp - December 2021 [GitHub profile](https://github.com/evanmalherbe)
+This project was created by Evan Malherbe as part of a task for HyperionDev Full Stack Development Bootcamp - December 2021 [GitHub profile](https://github.com/evanmalherbe)
